@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/bower/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="/bower/startbootstrap-sb-admin-2/dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/bower/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="/bower/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/bower/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="/bower/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css-" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/bower/datatables-responsive/css/responsive.dataTables.scss" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#" id="logoutLink"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/admin#driver"><i class="fa fa-table fa-fw"></i> Водители</a>
+                        </li>
+                        <li>
+                            <a href="/admin#transport"><i class="fa fa-edit fa-fw"></i> Машины</a>
+                        </li>
+                        <li>
+                            <a href="/admin#firm"><i class="fa fa-edit fa-fw"></i> Компании</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <%- body %>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+
+    <!-- /#wrapper -->
+<footer></footer>
+    <!-- jQuery -->
+    <script src="/bower/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/bower/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/bower/raphael/raphael-min.js"></script>
+    <script src="/bower/morrisjs/morris.min.js"></script>
+    <script src="/bower/routie/dist/routie.min.js"></script>
+    <script src="/libs/jquery-scrollspy/scrollspy.js"></script>
+    <script src="/bower/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="/bower/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/bower/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+    <script src="/bower/notFramework/js/notRecord.js"></script>
+    <script src="/bower/notFramework/js/notTemplate.js"></script>
+    <script src="/bower/notFramework/js/notForm.js"></script>
+    <script src="/bower/notFramework/js/notView.js"></script>
+    <script src="/bower/notFramework/js/notTable.js"></script>
+    <script src="/bower/notFramework/js/notPager.js"></script>
+    <script src="/bower/notFramework/js/notController.js"></script>
+    <script src="/bower/notFramework/js/notApp.js"></script>
+    <script src="/app/modules/firm/ncFirm.js"></script>
+    <script src="/app/modules/transport/ncTransport.js"></script>
+    <script src="/app/modules/driver/ncDriver.js"></script>
+    <script src="/app/app.js"></script>
+    <script>
+      $(function(){
+        $('#logoutLink').on('click', function(e){
+          e.preventDefault();
+          $.ajax({
+              type: "POST",
+              url: 'logout',
+              data: {},
+              success: function(){
+                window.location.href = '/';
+              },
+              error: function(data, status, error){
+                //console.log(data, status, error);
+                if (typeof data!== 'undefined' && data!== null && data.responseJSON.hasOwnProperty('error')){
+                  alert(data.responseJSON.error);
+                }
+              },
+              dataType: 'json'
+          });
+          return false;
+        });
+        $('footer').css({width:'100%', height: '20px'});
+        $('.sidebar').css({width:'150px'});
+      });
+    </script>
+
+</body>
+
+</html>

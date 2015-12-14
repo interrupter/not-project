@@ -21,5 +21,54 @@
   "bugs": {
     "url": "https://github.com/interrupter/not-project/issues"
   },
-  "homepage": "https://github.com/interrupter/not-project#readme"
+  "homepage": "https://github.com/interrupter/not-project#readme",
+  "dependencies": {
+        "async":"*",
+        "bower":"*",
+        "connect-mongo":"*",
+        "crypto":"*",
+        "ejs-locals":"*",
+        "extend":"*",
+        "mongodb":"*",
+        "mongoose":"*",
+        "validator":"*",
+        "mongoose-validator":"*",
+        "nconf":"*",
+        "underscore":"*",
+        "winston":"*",
+        "express": "*",
+        "morgan": "*",
+        "deep-diff":"*",
+        "imagemagick":"*",
+        "formidable": "*",
+        "express": "*",
+        "body-parser": "*",
+        "cookie-parser": "*",
+        "method-override": "*",
+        "express-session": "*",
+        "serve-favicon":"*",
+        "serve-static":"*",
+        "ejs": "*",
+        "iz": "*",
+        "google-caja":"*",
+        "nodemailer":"*",
+        "i18n-abide":"*",
+        "not-node":"*"
+
+  },"devDependencies": {
+      "grunt": "~0.4.2",
+      "grunt-contrib-jshint": "~0.8.0",
+      "grunt-contrib-watch": "~0.5.3",
+      "grunt-contrib-clean": "~0.5.0",
+      "grunt-contrib-copy": "~0.5.0",
+      "grunt-mocha-test": "~0.9.0",
+      "grunt-nodemon": "~0.2.0",
+      "grunt-concurrent": "~0.4.3",
+      "grunt-istanbul": "~0.2.4",
+      "grunt-env": "~0.4.1",
+      "should": "~3.1.2",
+      "nock": "~0.27.2",
+      "jshint":"*",
+      "supertest": "~0.9.0"
+    }
 }

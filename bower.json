@@ -1,0 +1,26 @@
+{
+  "name": "not-project",
+  "description": "not-project",
+  "main": "app.js",
+  "authors": [
+    "interrupter <levoe.milo@mail.ru>"
+  ],
+  "license": "private property",
+  "keywords": [
+    "private"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "app/node_modules",
+    "app/public/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "routie": "*",
+    "notFramework": "*"
+  }
+}

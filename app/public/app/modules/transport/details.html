@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+    <div class="panel-heading" data-not-provider="::versionName()"></div>
+    <!-- /.panel-heading -->
+    <div class="panel-body dl-horizontal">
+        <dl>
+            <dt>Тип</dt>
+            <dd data-not-provider=":type"></dd>
+
+            <dt>Марка</dt>
+            <dd data-not-provider=":brand"></dd>
+
+            <dt>Модель</dt>
+            <dd data-not-provider=":model"></dd>
+
+            <dt>Комплектация</dt>
+            <dd data-not-provider=":complectation"></dd>
+
+            <dt>Кол-во мест</dt>
+            <dd data-not-provider=":seatsNumber"></dd>
+
+            <dt>Класс (A, B, C)</dt>
+            <dd data-not-provider=":vehicleClass"></dd>
+
+            <dt>Гос. номер</dt>
+            <dd data-not-provider=":registrationNumber"></dd>
+
+            <dt>Номер (ID транспорта)</dt>
+            <dd data-not-provider=":transportID"></dd>
+
+            <dt>Привязка к водителям(перечень ID транспорта)</dt>
+            <dd><ul data-not-provider="::driverList()" class="list-unstyled"></ul></dd>
+
+            <dt>ID компании</dt>
+            <dd data-not-provider="::firmID()"></dd>
+        </dl>
+    </div>
+    <!-- /.panel-body -->
+</div>
