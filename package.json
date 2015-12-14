@@ -1,0 +1,25 @@
+{
+  "name": "not-project",
+  "version": "1.0.0",
+  "description": "notFramework/not-node/express/mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interrupter/not-project.git"
+  },
+  "keywords": [
+    "notFramework",
+    "not-node",
+    "express",
+    "mongoose"
+  ],
+  "author": "interrupter <alex.repin@mail.ru> (http://github.com/interrupter)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interrupter/not-project/issues"
+  },
+  "homepage": "https://github.com/interrupter/not-project#readme"
+}
