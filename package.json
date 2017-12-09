@@ -1,6 +1,6 @@
 {
   "name": "not-project",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "notFramework/not-node/express/mongoose",
   "main": "app.js",
   "scripts": {
