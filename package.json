@@ -16,7 +16,7 @@
     "express",
     "mongoose"
   ],
-  "author": "interrupter <alex.repin@mail.ru> (http://github.com/interrupter)",
+  "author": "interrupter <levoe.milo@mail.ru> (http://github.com/interrupter)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/interrupter/not-project/issues"
@@ -25,9 +25,10 @@
   "dependencies": {
     "body-parser": "*",
     "cors": "^2.8.4",
-    "express": "*",    
+    "express": "*",
     "express-session": "*",
     "helmet": "*",
+    "jstransformer-coffee-script": "^1.1.0",
     "method-override": "^2.3.10",
     "mongoose": "*",
     "nconf": "*",
