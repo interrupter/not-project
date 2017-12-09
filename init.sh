@@ -2,7 +2,7 @@
 CUR_DIR=`pwd`
 if [ "$1" = "" ]
 then
-    DIR='./'    
+    DIR='./'
 else
     DIR=$1
 fi
@@ -11,6 +11,7 @@ echo 'current directory' $CUR_DIR
 echo 'target directory' $DIR
 cd ${DIR}
 mkdir server/logs
+mkdir server/data
 mkdir server/data/client
 mkdir server/data/server
 mkdir server/data/tmp
