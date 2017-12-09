@@ -2,11 +2,13 @@
 CUR_DIR=`pwd`
 if [ "$1" = "" ]
 then
-    DIR='./'
+    DIR='./'    
 else
     DIR=$1
 fi
 echo '! init not-project'
+echo 'current directory' $CUR_DIR
+echo 'target directory' $DIR
 cd ${DIR}
 mkdir server/logs
 mkdir server/data/client
