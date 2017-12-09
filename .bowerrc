@@ -1,3 +1,3 @@
 {
-  "directory": "app/public/bower"
+    "directory" : "server/static/bower"
 }
