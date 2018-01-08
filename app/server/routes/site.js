@@ -1,6 +1,6 @@
 var HttpError = require('not-node').Error.Http,
-	config = require('../config'),
-	log = require('../libs/log')(module);
+	config = require('not-config').reader,
+	log = require('not-log')(module);
 
 exports.index = function (req, res) {
 	log.debug(req.user);

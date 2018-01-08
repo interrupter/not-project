@@ -1,5 +1,5 @@
-/node_modules/**
-/server/data/**
-/server/logs/**
-/server/static/**
-/server/app/views/**
+node_modules/**
+data/**
+logs/**
+app/static/**
+app/server/views/**

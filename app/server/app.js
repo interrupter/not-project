@@ -13,13 +13,24 @@ const express = require('express'),
 	notNode = require('not-node'),
 	notAppConstructor = notNode.notApp,
 	notStore = require('not-store'),
-	config = require('./config'),
-	log = require('./libs/log')(module);
+	log = require('not-log')(module),
+	pretty = require('not-pretty'),
+	config = require('not-config').reader;
 
 var	expressApp,
 	notApp;
 
+let initServerEnv = function(){
+	log.info('Setting up server environment variables...');
+	let fullServerName = ((config.get('proxy:secure') == 'true') ? 'https' : 'http') + '://' + config.get('host') + ':' + (config.get('proxy:port') || config.get('port'));
+	config.set('staticPath', path.join(__dirname, config.get('path:static') || 'static'));
+	config.set('modulesPath', path.join(__dirname, config.get('path:modules') || 'modules'));
+	config.set('appPath', __dirname);
+	config.set('fullServerName', fullServerName);
+};
+
 let initFileStore = function(input, options = {}){
+	log.info('Setting up file stores...');
 	let storeConfig = input,
 		pathToData = path.join(__dirname, storeConfig.root),
 		pathToTmp = path.join(__dirname, storeConfig.tmp);
@@ -38,15 +49,9 @@ let initFileStore = function(input, options = {}){
 	}
 };
 
-let initServerEnv = function(){
-	let fullServerName = ((config.get('proxy:secure') == 'true') ? 'https' : 'http') + '://' + config.get('host') + ':' + (config.get('proxy:port') || config.get('port'));
-	config.set('staticPath', path.join(__dirname, config.get('path:static') || 'static'));
-	config.set('modulesPath', path.join(__dirname, config.get('path:modules') || 'modules'));
-	config.set('appPath', __dirname);
-	config.set('fullServerName', fullServerName);
-};
 
 let initServerApp = function(){
+	log.info('Setting up express app...');
 	expressApp = express(),
 	expressApp.use(helmet());
 	notApp = new notAppConstructor({
@@ -64,6 +69,7 @@ let initServerApp = function(){
 };
 
 let initMongoose = function(input){
+	log.info('Setting up mongoose connection...');
 	mongoose.Promise = global.Promise;
 	mongoose.connect(input.uri, input.options)
 		.catch(log.error);
@@ -71,11 +77,13 @@ let initMongoose = function(input){
 };
 
 let initTemplateEngine = function(input = {views: 'views', engine:'pug'}){
+	log.info('Setting up template ('+input.engine+') engine...');
 	expressApp.set('views', path.join(__dirname, input.views));
 	expressApp.set('view engine', input.engine);
 };
 
 let initUserSessions = function(){
+	log.info('Setting up user sessions handler...');
 	var MongoStore = require('connect-mongo')(expressSession);
 	expressApp.use(expressSession({
 		secret: config.get('session:secret'),
@@ -90,6 +98,7 @@ let initUserSessions = function(){
 };
 
 let initCORS = function(input){
+	log.info('Setting up CORS rules...');
 	var whitelist = input;
 	var corsOptions = {
 		origin: function (origin, callback) {
@@ -104,6 +113,7 @@ let initCORS = function(input){
 
 let startup = function(){
 	if (config.get('ssl:enabled') === 'true') {
+		log.info('Setting up HTTPS server...');
 		expressApp.set('protocol', 'https');
 		let options = {
 			key: fs.readFileSync(config.get('ssl:keys:private')),
@@ -112,17 +122,19 @@ let startup = function(){
 		};
 		let server = https.createServer(options, expressApp);
 		server.listen(config.get('port'), function () {
-			log.info('!Project server listening on port ' + config.get('port') + '. For secure connections.');
+			log.info('Server listening on port ' + config.get('port') + '. For secure connections.');
 		});
 	} else {
+		log.info('Setting up HTTP server...');
 		expressApp.set('protocol', 'http');
 		http.createServer(expressApp).listen(config.get('port'), function () {
-			log.info('!Project server listening on port ' + config.get('port'));
+			log.info('Server listening on port ' + config.get('port'));
 		});
 	}
 };
 
 let initMiddleware = function(input){
+	log.info('Setting up middlewares...');
 	if (input){
 		for (let ware in input){
 			if (ware){
@@ -157,6 +169,9 @@ let serveFront = function (req, res, next) {
 };
 
 let initExposeRoutes = function(){
+	log.info('Setting up routes...');
+	config.set('modules:pretty:root', path.join(__dirname, config.get('modules:pretty:root')));
+	expressApp.use(pretty);
 	notApp.expose(expressApp);
 	require('./routes')(expressApp, notApp);
 	expressApp.use(serveStatic(config.get('staticPath')));
@@ -165,6 +180,7 @@ let initExposeRoutes = function(){
 };
 
 module.exports = function () {
+	log.info('Kick start app...');
 	initServerEnv();
 	initFileStore(config.get('store'));
 	initMongoose(config.get('mongoose'));

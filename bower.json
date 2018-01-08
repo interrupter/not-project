@@ -14,8 +14,8 @@
   "private": true,
   "ignore": [
     "**/.*",
-    "app/node_modules",
-    "app/public/bower",
+    "node_modules",
+    "app/static/bower",
     "test",
     "tests"
   ],

@@ -1,0 +1,106 @@
+<nt name="menu_item">
+	<li>
+		<a n-href=":url" title="Опции"> <span class="menu-item-parent" n-content="{:title}"></span></a>
+		<nt name="sub_menu" data=":"></nt>
+	</li>
+</nt>
+
+<nt name="sub_menu">
+	<ul n-class-show-hide=":items.length">
+		<nt name="menu_sub_item" data=":items"></nt>
+	</ul>
+</nt>
+
+<nt name="menu_sub_item">
+	<li>
+		<a n-href=":url" title="Опции"> <span n-content="{:title}"></span></a>
+	</li>
+</nt>
+
+<section data-not-template-name="notForm_text" data-target="body">
+	<label class="label" data-not-attr-for="::fieldId" data-not-provider-capitalizeFirst="::fieldPlaceHolder">E-mail</label>
+	<label class="input"> <i class="icon-append fa fa-user"></i>
+        <input type="text" data-not-attr-value="::fieldValue" class="form-control" data-not-attr-id="::fieldId" data-not-attr-name="::fieldName" data-not-attr-placeholder="::fieldPlaceHolder">
+        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i></b></label>
+</section>
+
+<nt name="form_email">
+	<section>
+		<label class="label" data-not-attr-for="::fieldId" n-content="{::field.label}">E-mail</label>
+		<label class="input"> <i class="icon-append fa fa-envelope"></i>
+	        <input type="email" n-name="::field.name" n-value=":{::field.name}" class="form-control" n-attr-id="::field.id" n-attr-placeholder="::field.placeholder">
+	        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
+	</section>
+</nt>
+
+<section data-not-template-name="notForm_tel" data-target="body">
+	<label class="label" data-not-attr-for="::fieldId" data-not-provider-capitalizeFirst="::fieldPlaceHolder">E-mail</label>
+	<label class="input"> <i class="icon-append fa fa-phone"></i>
+        <input type="tel" data-not-attr-value="::fieldValue" class="form-control" data-not-attr-id="::fieldId" data-not-attr-name="::fieldName" data-not-attr-placeholder="::fieldPlaceHolder">
+        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter phone</b></label>
+</section>
+
+<nt name="form_password">
+	<section>
+		<label n-attr-for="::field.id" class="label" n-content-capitalizeFirst="{::field.placeholder}"></label>
+		<label class="input"> <i class="icon-append fa fa-lock"></i>
+        <input n-value=":{::field.name}" n-attr-id="::field.id" n-name="::field.name" n-attr-placeholder="::field.placeholder" type="password">
+        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Введите пароль</b> </label>
+		<div class="note">
+			<a class="forgotPasswordNote" n-href="/forgot">Забыли пароль?</a>
+		</div>
+	</section>
+</nt>
+
+<section data-not-template-name="notForm_date" data-target="body">
+	<label data-not-attr-for="::fieldId" class="label" data-not-provider-capitalizeFirst="::fieldPlaceHolder"></label>
+	<label class="input"> <i class="icon-append fa fa-calendar"></i>
+        <input type="date" class="form-control" data-not-attr-value="::fieldValue" class="form-control" data-not-attr-id="::fieldId" data-not-attr-name="::fieldName" data-not-attr-placeholder="::fieldPlaceHolder">
+        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Введите пароль</b>
+    </label>
+</section>
+
+<div data-not-template-name="notForm_checkbox">
+	<div class="form-group">
+		<label data-not-attr-for="::fieldId" class="col-sm-2 control-label" data-not-provider-capitalizeFirst="::fieldName"></label>
+		<div class="col-sm-10">
+			<div class="checkbox">
+				<label>
+                    <input type="checkbox" data-not-attr-value="1" data-not-checked="::fieldValue" data-not-attr-name="::fieldName" data-not-attr-id="::fieldId"></input>
+                    <span class="help-block" style="display: none;"><i class="fa fa-warning"></i> Error!</span>
+                </label>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<nt name="form_submit" target="footer">
+	<button n-bind-click="::submit" type="submit" class="btn btn-primary" id="submitBtn">Отправить</button>
+</nt>
+
+<div data-not-template-name="notForm_itemEditForm">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading" data-not-provider="::formTitle"></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-lg-6">
+						<form role="form" method="POST" data-not-attr-id="::formId" enctype="multipart/form-data"></form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<nt name="form_wrapper">
+	<div class="well no-padding">
+		<form action="" n-attr-id="::formId" id="login-form" class="smart-form client-form">
+			<header n-content="{:title}"></header>
+			<fieldset role="body"></fieldset>
+			<footer role="footer"></footer>
+		</form>
+	</div>
+</nt>

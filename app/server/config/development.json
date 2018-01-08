@@ -1,0 +1,121 @@
+{
+	"port": 9981,
+	"proxy": {
+		"port": 9981
+	},
+	"host": "localhost",
+	"cors": [],
+	"template":{
+		"engine" : 	"ejs",
+		"views": 	"views",
+		"partialsDir": "partials",
+		"partials": {}
+	},
+	"mongoose": {
+		"uri": "mongodb://localhost/test?authSource=admin",
+		"options": {
+			"useMongoClient": true,
+			"user": "test",
+			"pass": "test",
+			"autoIndex": false,
+			"reconnectInterval": 500,
+			"poolSize": 10,
+			"bufferMaxEntries": 0
+		}
+	},
+	"session": {
+		"secret": "",
+		"cookie": {
+			"maxAge": 2628000000
+		},
+		"key": "SessionID"
+	},
+	"ssl": {
+		"enabled": false,
+		"keys": {
+			"private": "",
+			"fullchain": "",
+			"chain": ""
+		}
+	},
+	"path": {
+		"static": "../static",
+		"app": "/client"
+	},
+	"store": {
+		"oldAge": 100,
+		"root": "../data",
+		"uriRoot": "/file",
+		"mountpoint": "/",
+		"tmp": "../data/tmp",
+		"buckets": {
+			"client":{
+				"driver": "notStoreImage"
+			},
+			"project":{
+				"driver": "notStoreImage"
+			},
+			"server":{
+				"driver": "notStoreImage"
+			}
+		}
+	},
+	"thumbs": {
+		"big": {
+			"max": 1080
+		},
+		"middle": {
+			"max": 720
+		},
+		"small": {
+			"max": 480
+		},
+		"micro": {
+			"max": 100
+		}
+	},
+	"defaultUserRole": "user",
+	"input": {
+		"form": [
+			"application/x-www-form-urlencoded",
+			"multipart/form-data"
+		],
+		"json": [
+			"application/json;",
+			"application/json; charset=utf-8",
+			"application/json;charset=utf-8",
+			"application/json"
+		],
+		"file": [
+			"image/jpeg",
+			"image/png",
+			"image/tiff",
+			"image/tif",
+			"image/bmp"
+		],
+		"fileShort": [
+			"jpg",
+			"jpeg",
+			"tiff",
+			"tif",
+			"png",
+			"bmp"
+		]
+	},
+	"modules": {
+		"cache": {
+			"enabled": true,
+			"models": []
+		},
+		"pretty":{
+			"root": "../static",
+			"templatesDir": "views",
+			"files": {
+				"/Главная": "/index.html"
+			},
+			"templates": {
+				"/неГлавная": "index.ejs"
+			}
+		}
+	}
+}

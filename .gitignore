@@ -1,5 +1,5 @@
 npm-debug.log*
-server/logs/*
-server/data/*
-server/static/bower/
+data/**
+logs/**
+app/static/bower/
 node_modules/
