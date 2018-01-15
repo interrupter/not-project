@@ -1,0 +1,19 @@
+{
+	"name": "Project name",
+	"targets": {
+		"server": {
+			"name": "Application name",
+			"roles": ["root", "admin", "client", "user", "guest"],
+			"builder": "server",
+			"root": "app/front/",
+			"src": "app/front/src/",
+			"build": "app/front/build/",
+			"index": "app/front/src/index.template.js",
+			"rollup": "app/front/rollup.template.js",
+			"modules": {
+				"serverModulesDir": "app/server/modules",
+				"frontModulesDir": "app/front/src/"
+			}
+		}
+	}
+}
