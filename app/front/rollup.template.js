@@ -31,8 +31,8 @@ export default {
 		file: '<%=outputPath%>',
 		name: '<%=appName%>',
 		format: 'iife'
-	},	
-	sourceMap: false && (process.env.NODE_ENV === 'production' ? false : 'inline'),
+	},
+	sourcemap: false && (process.env.NODE_ENV === 'production' ? false : 'inline'),
 	plugins: [
 		postcss({
 			plugins: [
