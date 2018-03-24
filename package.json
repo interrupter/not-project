@@ -1,59 +1,63 @@
 {
-	"name": "not-project",
-	"version": "2.0.10",
-	"description": "notFramework/not-node/express/mongoose",
-	"main": "app.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "./node_modules/.bin/not-builder --config='./project.manifest.json'",
-		"production": "./node_modules/.bin/not-builder --config='./project.manifest.json' --environment=production",
-		"development": "./node_modules/.bin/not-builder --config='./project.manifest.json' --environment=development",
-		"stage": "./node_modules/.bin/not-builder --config='./project.manifest.json' --environment=stage"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/interrupter/not-project.git"
-	},
-	"keywords": [
-		"notFramework",
-		"not-node",
-		"express",
-		"mongoose"
-	],
-	"author": "interrupter <levoe.milo@mail.ru> (http://github.com/interrupter)",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/interrupter/not-project/issues"
-	},
-	"homepage": "https://github.com/interrupter/not-project#readme",
-	"dependencies": {
-		"body-parser": "*",
-		"cors": "^2.8.4",
-		"ejs": "^2.5.7",
-		"express": "*",
-		"express-ejs-layouts": "^2.3.1",
-		"express-session": "*",
-		"handlebars": "^4.0.11",
-		"helmet": "*",
-		"jstransformer-coffee-script": "^1.1.0",
-		"method-override": "^2.3.10",
-		"mongoose": "*",
-		"nconf": "*",
-		"not-cache": "*",
-		"not-config": "*",
-		"not-log": "*",
-		"not-node": "*",
-		"not-pretty": "*",
-		"not-store": "*",
-		"pm2": "*",
-		"pm2-logrotate": "*",
-		"pug": "^2.0.0-rc.4",
-		"querystring": "*",
-		"serve-static": "*",
-		"winston": "*",
-		"winston-daily-rotate-file": "*"
-	},
-	"devDependencies": {
-		"eslint": "^4.11.0"
-	}
+  "name": "not-project",
+  "version": "2.0.10",
+  "description": "notFramework/not-node/express/mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/not-builder --config='./project.manifest.json'",
+    "production": "./node_modules/.bin/not-builder --config='./project.manifest.json' --environment=production",
+    "development": "./node_modules/.bin/not-builder --config='./project.manifest.json' --environment=development",
+    "stage": "./node_modules/.bin/not-builder --config='./project.manifest.json' --environment=stage",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interrupter/not-project.git"
+  },
+  "keywords": [
+    "notFramework",
+    "not-node",
+    "express",
+    "mongoose"
+  ],
+  "author": "interrupter <levoe.milo@mail.ru> (http://github.com/interrupter)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interrupter/not-project/issues"
+  },
+  "homepage": "https://github.com/interrupter/not-project#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "*",
+    "express-ejs-layouts": "^2.3.1",
+    "express-session": "*",
+    "handlebars": "^4.0.11",
+    "helmet": "*",
+    "jstransformer-coffee-script": "^1.1.0",
+    "method-override": "^2.3.10",
+    "mongoose": "*",
+    "nconf": "*",
+    "not-cache": "*",
+    "not-config": "*",
+    "not-log": "*",
+    "not-node": "*",
+    "not-pretty": "*",
+    "not-store": "*",
+    "pm2": "*",
+    "pm2-logrotate": "*",
+    "pug": "^2.0.0-rc.4",
+    "querystring": "*",
+    "serve-static": "*",
+    "winston": "*",
+    "winston-daily-rotate-file": "*",
+    "snyk": "^1.70.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0"
+  },
+  "snyk": true
 }

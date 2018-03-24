@@ -1,0 +1,16 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.10.2
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - winston-daily-rotate-file > winston-compat > vows > glob > minimatch:
+        patched: '2018-03-24T08:34:50.730Z'
+    - not-log > winston-daily-rotate-file > winston-compat > vows > glob > minimatch:
+        patched: '2018-03-24T08:34:50.730Z'
+    - not-cache > not-log > winston-daily-rotate-file > winston-compat > vows > glob > minimatch:
+        patched: '2018-03-24T08:34:50.730Z'
+    - not-store > not-log > winston-daily-rotate-file > winston-compat > vows > glob > minimatch:
+        patched: '2018-03-24T08:34:50.730Z'
+    - not-node > not-log > winston-daily-rotate-file > winston-compat > vows > glob > minimatch:
+        patched: '2018-03-24T08:34:50.730Z'
