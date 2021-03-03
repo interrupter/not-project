@@ -47,7 +47,7 @@
 		"not-store": "*",
 		"pm2": "*",
 		"pm2-logrotate": "*",
-		"pug": "^2.0.0-rc.4",
+		"pug": "^3.0.1",
 		"querystring": "*",
 		"serve-static": "*",
 		"winston": "*",
