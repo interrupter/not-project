@@ -51,7 +51,7 @@
 		"querystring": "*",
 		"serve-static": "*",
 		"winston": "*",
-		"winston-daily-rotate-file": "*"
+		"winston-daily-rotate-file": "3.0.0"
 	},
 	"devDependencies": {
 		"eslint": "^4.11.0"
