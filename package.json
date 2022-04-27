@@ -29,7 +29,7 @@
 	"dependencies": {
 		"body-parser": "*",
 		"cors": "^2.8.4",
-		"ejs": "^2.5.7",
+		"ejs": "^3.1.7",
 		"express": "*",
 		"express-ejs-layouts": "^2.3.1",
 		"express-session": "*",
