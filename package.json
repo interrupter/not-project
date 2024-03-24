@@ -42,7 +42,7 @@
 		"not-cache": "*",
 		"not-config": "*",
 		"not-log": "*",
-		"not-node": "*",
+		"not-node": "6.3.59",
 		"not-pretty": "*",
 		"not-store": "*",
 		"pm2": "*",
